@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <title>JSON Tehtävä 1</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav>
+    <a href="json.html">JSON</a> |
+    <a href="poke.html">Poke Haku</a> |
+    <a href="saa.html">Sää</a>
+  </nav>
+
+  <h1>Oma JSON tietue</h1>
+  <div id="vastaus"></div>
+
+  <script>
+    fetch('tietue.json')
+      .then(response => response.json())
+      .then(data => kerro(data))
+      .catch(error => {
+        document.getElementById("vastaus").innerHTML = "<p>Virhe haussa</p>";
+      });
+
+    function kerro(obj) {
+      let tiedot = "<h2>" + obj.otsikko + "</h2><p>" + obj.kuvaus + "</p>";
+      tiedot += "<p><img src='" + obj.kuva + "' width='300'></p>";
+      tiedot += "<h3>Opintojakso</h3>";
+      tiedot += "Nimi: " + obj.opintojakso.nimi + "<br>";
+      tiedot += "Tunnus: " + obj.opintojakso.tunnus + "<br>";
+      tiedot += "Opintopisteet: " + obj.opintojakso.opintopisteet + "<br>";
+
+      tiedot += "<h3>Aiheet</h3>";
+      for (let i = 0; i < obj.tekniikat.length; i++) {
+        tiedot += "<b>" + obj.tekniikat[i].aihe + "</b>: ";
+        tiedot += "<a href='" + obj.tekniikat[i].linkki + "'>" + obj.tekniikat[i].linkki + "</a><br>";
+      }
+
+      document.getElementById("vastaus").innerHTML = tiedot;
+    }
+  </script>
+</body>
+</html>

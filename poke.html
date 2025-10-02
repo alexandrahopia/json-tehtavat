@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <title>Poke Haku</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav>
+    <a href="json.html">JSON</a> |
+    <a href="poke.html">Poke Haku</a> |
+    <a href="saa.html">Sää</a>
+  </nav>
+
+  <h1>Pokemon haku</h1>
+  <input type="text" id="pokemonName" placeholder="Kirjoita Pokemonin nimi">
+  <button onclick="poke()">Hae</button>
+  <button onclick="kaanna()">Käännä</button>
+
+  <div id="nimi"></div>
+  <div id="kuva2"></div>
+  <div id="ominaisuudet"></div>
+
+  <script>
+    let currentPokemon = null;
+    let name = "";
+
+    function poke() {
+      const pokeName = document.getElementById("pokemonName").value.toLowerCase();
+      name = document.getElementById("pokemonName").value;
+
+      fetch(`https://pokeapi.co/api/v2/pokemon/${pokeName}`)
+        .then(response => response.json())
+        .then(data => {
+          currentPokemon = data;
+          pokekuva(data);
+        })
+        .catch(error => {
+          document.getElementById("nimi").innerHTML = "Ei löytynyt!";
+        });
+    }
+
+    function pokekuva(obj) {
+      let pokeurl = obj.sprites.front_default;
+      document.getElementById("kuva2").innerHTML = "<img src='" + pokeurl + "'>";
+      document.getElementById("nimi").innerHTML = "<b>" + name + "</b>";
+      document.getElementById("ominaisuudet").innerHTML =
+        "<p>Paino: " + obj.weight + "</p>" +
+        "<p>Pituus: " + obj.height + "</p>" +
+        "<p>Tyyppi: " + obj.types[0].type.name + "</p>";
+      document.getElementById("pokemonName").value = "";
+    }
+
+    function kaanna() {
+      if (currentPokemon) {
+        let backUrl = currentPokemon.sprites.back_default;
+        document.getElementById("kuva2").innerHTML = "<img src='" + backUrl + "'>";
+      }
+    }
+  </script>
+</body>
+</html>

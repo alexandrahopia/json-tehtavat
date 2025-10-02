@@ -1,0 +1,28 @@
+{
+  "otsikko": "Digitekniikat",
+  "kuvaus": "Kurssilla harjoitellaan JSON-tietojen hakua ja käsittelyä JavaScriptillä.",
+  "kuva": "https://jaakkola.github.io/json/digi.JPG",
+  "opintojakso": {
+    "nimi": "Digitekniikat",
+    "tunnus": "DT123",
+    "opintopisteet": 5
+  },
+  "tekniikat": [
+    {
+      "aihe": "low-code",
+      "linkki": "https://fi.wikipedia.org/wiki/Low-code"
+    },
+    {
+      "aihe": "sisällönhallintajärjestelmät",
+      "linkki": "https://fi.wikipedia.org/wiki/Sis%C3%A4ll%C3%B6nhallintaj%C3%A4rjestelm%C3%A4"
+    },
+    {
+      "aihe": "responsiivinen käyttöliittymä",
+      "linkki": "https://fi.wikipedia.org/wiki/Responsiivinen_suunnittelu"
+    },
+    {
+      "aihe": "tiedon haku rajapinnasta",
+      "linkki": "https://fi.wikipedia.org/wiki/Rajapinta"
+    }
+  ]
+}

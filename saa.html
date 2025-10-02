@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <title>Sää Helsingissä</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav>
+    <a href="json.html">JSON</a> |
+    <a href="poke.html">Poke Haku</a> |
+    <a href="saa.html">Sää</a>
+  </nav>
+
+  <h1>Sää Helsingissä</h1>
+  <div id="saa"></div>
+  <div id="aika"></div>
+
+  <script>
+    const url = "https://api.openweathermap.org/data/2.5/weather?id=658225&appid=665ecd56dfc08dbb50feb8b8f5034e28&lang=fi&units=metric";
+
+    fetch(url)
+      .then(response => response.json())
+      .then(data => naytaSaa(data));
+
+    function naytaSaa(data) {
+      let html = "<p>Sää: " + data.weather[0].description + "</p>";
+      html += "<p>Lämpötila: " + data.main.temp + " °C</p>";
+      html += "<p>Tuuli: " + data.wind.speed + " m/s</p>";
+      let icon = data.weather[0].icon;
+      html += "<img src='https://openweathermap.org/img/wn/" + icon + "@2x.png'>";
+
+      document.getElementById("saa").innerHTML = html;
+
+      let aika = new Date();
+      document.getElementById("aika").innerHTML = "<p>Sivu ladattu: " + aika.toLocaleString("fi-FI") + "</p>";
+    }
+  </script>
+</body>
+</html>
