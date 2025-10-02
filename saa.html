@@ -6,15 +6,21 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <nav>
-    <a href="json.html">JSON</a> |
-    <a href="poke.html">Poke Haku</a> |
-    <a href="saa.html">Sää</a>
-  </nav>
+  <header>
+    <h1>JSON-tehtävät</h1>
+    <nav>
+      <a href="index.html">Etusivu</a>
+      <a href="json.html">JSON</a>
+      <a href="poke.html">Poke Haku</a>
+      <a href="saa.html">Sää</a>
+    </nav>
+  </header>
 
-  <h1>Sää Helsingissä</h1>
-  <div id="saa"></div>
-  <div id="aika"></div>
+  <main>
+    <h2>Sää Helsingissä</h2>
+    <div id="saa"></div>
+    <div id="aika"></div>
+  </main>
 
   <script>
     const url = "https://api.openweathermap.org/data/2.5/weather?id=658225&appid=665ecd56dfc08dbb50feb8b8f5034e28&lang=fi&units=metric";

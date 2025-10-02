@@ -6,20 +6,26 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <nav>
-    <a href="json.html">JSON</a> |
-    <a href="poke.html">Poke Haku</a> |
-    <a href="saa.html">Sää</a>
-  </nav>
+  <header>
+    <h1>JSON-tehtävät</h1>
+    <nav>
+      <a href="index.html">Etusivu</a>
+      <a href="json.html">JSON</a>
+      <a href="poke.html">Poke Haku</a>
+      <a href="saa.html">Sää</a>
+    </nav>
+  </header>
 
-  <h1>Pokemon haku</h1>
-  <input type="text" id="pokemonName" placeholder="Kirjoita Pokemonin nimi">
-  <button onclick="poke()">Hae</button>
-  <button onclick="kaanna()">Käännä</button>
+  <main>
+    <h2>Pokemon haku</h2>
+    <input type="text" id="pokemonName" placeholder="Kirjoita Pokemonin nimi">
+    <button onclick="poke()">Hae</button>
+    <button onclick="kaanna()">Käännä</button>
 
-  <div id="nimi"></div>
-  <div id="kuva2"></div>
-  <div id="ominaisuudet"></div>
+    <div id="nimi"></div>
+    <div id="kuva2"></div>
+    <div id="ominaisuudet"></div>
+  </main>
 
   <script>
     let currentPokemon = null;
@@ -60,3 +66,4 @@
   </script>
 </body>
 </html>
+

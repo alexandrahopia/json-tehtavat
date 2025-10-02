@@ -10,19 +10,19 @@
   "tekniikat": [
     {
       "aihe": "low-code",
-      "linkki": "https://fi.wikipedia.org/wiki/Low-code"
+      "linkki": "https://www.outsystems.com/low-code/"
     },
     {
       "aihe": "sisällönhallintajärjestelmät",
-      "linkki": "https://fi.wikipedia.org/wiki/Sis%C3%A4ll%C3%B6nhallintaj%C3%A4rjestelm%C3%A4"
+      "linkki": "https://www.ibm.com/think/topics/content-management-system"
     },
     {
       "aihe": "responsiivinen käyttöliittymä",
-      "linkki": "https://fi.wikipedia.org/wiki/Responsiivinen_suunnittelu"
+      "linkki": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design"
     },
     {
       "aihe": "tiedon haku rajapinnasta",
-      "linkki": "https://fi.wikipedia.org/wiki/Rajapinta"
+      "linkki": "https://www.redhat.com/en/topics/api/what-are-application-programming-interfaces"
     }
   ]
 }

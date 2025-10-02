@@ -6,14 +6,20 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <nav>
-    <a href="json.html">JSON</a> |
-    <a href="poke.html">Poke Haku</a> |
-    <a href="saa.html">Sää</a>
-  </nav>
+  <header>
+    <h1>JSON-tehtävät</h1>
+    <nav>
+      <a href="index.html">Etusivu</a>
+      <a href="json.html">JSON</a>
+      <a href="poke.html">Poke Haku</a>
+      <a href="saa.html">Sää</a>
+    </nav>
+  </header>
 
-  <h1>Oma JSON tietue</h1>
-  <div id="vastaus"></div>
+  <main>
+    <h2>Oma JSON tietue</h2>
+    <div id="vastaus"></div>
+  </main>
 
   <script>
     fetch('tietue.json')
@@ -42,3 +48,4 @@
   </script>
 </body>
 </html>
+
